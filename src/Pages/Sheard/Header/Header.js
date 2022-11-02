@@ -6,7 +6,7 @@ import GoogleLogin from '../../GoogleLogin/GoogleLogin';
 
 const Header = () => {
 
-  const {logout} = useContext(AuthContext);
+  const {logout,user} = useContext(AuthContext);
 
 
   const handleLogout =()=>{
@@ -15,10 +15,22 @@ const Header = () => {
     .catch(e => console.error(e));
   }
 
+
+
     const menuItems = <>
         <li className="font-semibold"><Link to='/'>Home</Link></li>
-        <li className="font-semibold"><Link to='/login'>Login</Link></li>
-        {/* <li className="font-semibold"><Link to='/google'>Google</Link></li> */}
+       
+        {
+          user?.email ?
+          <>
+            <li className="font-semibold"><Link to='/orders'>Orders</Link></li>
+          </>
+          :
+            <li className="font-semibold"><Link to='/login'>Login</Link></li>
+
+        }
+      
+        
         <GoogleLogin></GoogleLogin>
     </>
 

@@ -35,6 +35,7 @@ const CheckOut = () => {
             method:'POST',
             headers:{
                 'Content-Type': 'application/json',
+                authorization: `Bearer ${localStorage.getItem('genious-token')}`
             },
             body: JSON.stringify(order)
         })

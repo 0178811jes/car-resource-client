@@ -24,6 +24,7 @@ const Header = () => {
           user?.email ?
           <>
             <li className="font-semibold"><Link to='/orders'>Orders</Link></li>
+            <li onClick={handleLogout} className="btn-ghost"><Link>Logout</Link></li>
           </>
           :
             <li className="font-semibold"><Link to='/login'>Login</Link></li>
@@ -56,7 +57,6 @@ const Header = () => {
     </ul>
   </div>
   <div className="navbar-end">
-  <Link to='/login'><button onClick={handleLogout} className="btn btn-primary mr-5">Logout</button></Link>
   <button className="btn btn-warning">appoinment</button>
   </div>
 </div>

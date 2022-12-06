@@ -26,11 +26,11 @@ const AuthProvider = ({children}) => {
         return signInWithPopup(auth, provider);
     }
 
-    const logout = () =>{
+   const logout = () =>{
         localStorage.removeItem('genious-token');
         setLoading(true);
         return signOut(auth);
-    }
+    } 
 
 
     useEffect(()=>{
